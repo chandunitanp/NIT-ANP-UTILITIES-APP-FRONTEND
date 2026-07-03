@@ -71,11 +71,7 @@ export default function ProfileScreen() {
   Department: {user?.departmentName || "N/A"}
 </Text>
 
-        <Text style={styles.info}>
-          Team:
-          {" "}
-          {user?.teamType || "N/A"}
-        </Text>
+      
       </View>
 
       <TouchableOpacity

@@ -133,23 +133,7 @@ export default function Profile() {
 
           </View>
 
-          <View
-            style={[
-              styles.infoBox,
-              styles.lastInfo,
-            ]}
-          >
-
-            <Text style={styles.label}>
-              Team
-            </Text>
-
-            <Text style={styles.value}>
-              {user?.teamType ||
-                "Not Assigned"}
-            </Text>
-
-          </View>
+    
 
           <View style={styles.infoBox}>
   <Text style={styles.label}>Department</Text>
