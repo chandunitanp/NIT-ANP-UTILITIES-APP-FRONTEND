@@ -1,26 +1,38 @@
 {
   "expo": {
-    "name": "NoticeBoard",
-    "slug": "noticeboard",
+    "name": "mobilefrontend",
+    "slug": "mobilefrontend",
     "version": "1.0.0",
+    "platforms": [
+      "android",
+      "ios"
+    ],
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "newArchEnabled": false,
-    "scheme": "noticeboard",
+    "scheme": "mobilefrontend",
     "splash": {
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "android": {
-      "package": "com.anonymous.noticeboard",
+      "package": "com.anonymous.mobilefrontend",
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.mobilefrontend",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
       }
     },
     "plugins": [
       "expo-router",
       "expo-secure-store",
-      "expo-dev-client",
       [
         "expo-build-properties",
         {
@@ -28,16 +40,15 @@
             "usesCleartextTraffic": true
           }
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
+    "owner": "chris143",
     "extra": {
-      "router": {
-        "origin": false
-      },
+      "router": {},
       "eas": {
-        "projectId": "8b119493-de2e-42f2-83a5-7b7f7124128f"
+        "projectId": "7b0ba91b-f4e2-40d9-beb4-154b138a510f"
       }
-    },
-    "owner": "chandu0"
+    }
   }
 }

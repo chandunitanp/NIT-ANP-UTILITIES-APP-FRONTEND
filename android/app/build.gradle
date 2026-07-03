@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.noticeboard'
+    namespace 'com.anonymous.mobilefrontend'
     defaultConfig {
-        applicationId 'com.anonymous.noticeboard'
+        applicationId 'com.anonymous.mobilefrontend'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
