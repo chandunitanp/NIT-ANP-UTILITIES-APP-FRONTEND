@@ -43,6 +43,11 @@ export default function StudentTabsLayout() {
     title: "Notices",
   }}
 />
+
+     <Tabs.Screen
+        name="menu"
+        options={{ title: "Menu" }}
+      />
     </Tabs>
   );
 }
