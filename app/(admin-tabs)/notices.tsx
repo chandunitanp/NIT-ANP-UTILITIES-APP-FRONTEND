@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import * as Linking from "expo-linking";
 import {
   View,
   Text,
@@ -154,6 +155,26 @@ export default function NoticesScreen() {
             >
               {item.message}
             </Text>
+
+{item.filePath && (
+  <TouchableOpacity
+    onPress={() =>
+      Linking.openURL(
+        `http://172.180.6.211:8080/files/${item.filePath}`
+      )
+    }
+    style={{
+      marginTop: 10,
+      backgroundColor: "#E8F0FE",
+      padding: 10,
+      borderRadius: 8,
+    }}
+  >
+    <Text style={{ color: "#007AFF", fontWeight: "600" }}>
+      📎 View Attachment
+    </Text>
+  </TouchableOpacity>
+)}
 
             <Text
               style={{
