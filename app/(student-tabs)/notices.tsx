@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useFocusEffect } from "expo-router";
+import React, { useCallback ,useEffect, useState } from "react";
+import * as Linking from "expo-linking";
 import {
   View,
   Text,
   FlatList,
   ActivityIndicator,
   Alert,
+  TouchableOpacity,
 } from "react-native";
 
 import api from "../../api/axios";
@@ -27,9 +30,11 @@ export default function StudentNoticesScreen() {
   const [loading, setLoading] =
     useState(true);
 
-  useEffect(() => {
+useFocusEffect(
+  useCallback(() => {
     loadNotices();
-  }, []);
+  }, [])
+);
 
   const loadNotices = async () => {
 
@@ -120,6 +125,26 @@ export default function StudentNoticesScreen() {
             >
               {item.message}
             </Text>
+
+            {item.filePath && (
+  <TouchableOpacity
+    onPress={() =>
+      Linking.openURL(
+        `http://172.180.6.211:8080/files/${item.filePath}`
+      )
+    }
+    style={{
+      marginTop: 10,
+      backgroundColor: "#E8F0FE",
+      padding: 10,
+      borderRadius: 8,
+    }}
+  >
+    <Text style={{ color: "#007AFF", fontWeight: "600" }}>
+      📎 View Attachment
+    </Text>
+  </TouchableOpacity>
+)}
 
             <View
               style={{
