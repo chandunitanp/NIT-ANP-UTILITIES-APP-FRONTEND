@@ -13,6 +13,8 @@ import {
   ScrollView,
 } from "react-native";
 
+import { Picker } from "@react-native-picker/picker";
+
 import axios from "axios";
 
 import { useRouter } from "expo-router";
@@ -100,6 +102,16 @@ export default function Register() {
 
       return;
     }
+
+    if (!branchCode) {
+  Alert.alert("Error", "Please select program");
+  return;
+}
+
+     if (!personalEmail) {
+  Alert.alert("Error", "Please Enter your college ID");
+  return;
+}
 
     // =====================================================
     // PASSWORD MATCH
@@ -300,19 +312,26 @@ export default function Register() {
         {/* BRANCH */}
         {/* ============================================= */}
 
-        <TextInput
-          placeholder="Branch Code"
-          style={styles.input}
-          value={branchCode}
-          onChangeText={setBranchCode}
-        />
+       <View style={styles.pickerContainer}>
+  <Picker
+    selectedValue={branchCode}
+    onValueChange={(itemValue) =>
+      setBranchCode(itemValue)
+    }
+  >
+    <Picker.Item label="Select Program" value="" />
+    <Picker.Item label="UG" value="UG" />
+    <Picker.Item label="PG" value="PG" />
+    <Picker.Item label="PhD" value="PHD" />
+  </Picker>
+</View>
 
         {/* ============================================= */}
         {/* PERSONAL EMAIL */}
         {/* ============================================= */}
 
         <TextInput
-          placeholder="Personal Email"
+          placeholder="College ID"
           style={styles.input}
           value={personalEmail}
           onChangeText={setPersonalEmail}
@@ -489,4 +508,12 @@ const styles = StyleSheet.create({
 
     fontWeight: "bold",
   },
+
+  pickerContainer: {
+  borderWidth: 1,
+  borderColor: "#ccc",
+  borderRadius: 8,
+  marginBottom: 15,
+},
+
 });
