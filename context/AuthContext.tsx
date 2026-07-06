@@ -17,6 +17,7 @@
     teamType?: string;
     departmentName?: string;
     branchCode?: string;
+    personalEmail?: string;
   };
 
   type AuthContextType = {
@@ -128,7 +129,10 @@
 
         departmentName:
           data.departmentName,
+          
         branchCode: data.branchCode,
+        personalEmail:data.personalEmail,
+
       };
       console.log("branchCode from response =", data.branchCode);
       console.log("USER DATA =", userData);
