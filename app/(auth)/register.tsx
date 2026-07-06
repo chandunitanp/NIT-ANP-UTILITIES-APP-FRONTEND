@@ -108,6 +108,11 @@ export default function Register() {
   return;
 }
 
+     if (!personalEmail) {
+  Alert.alert("Error", "Please Enter your college ID");
+  return;
+}
+
     // =====================================================
     // PASSWORD MATCH
     // =====================================================
@@ -326,7 +331,7 @@ export default function Register() {
         {/* ============================================= */}
 
         <TextInput
-          placeholder="Personal Email"
+          placeholder="College ID"
           style={styles.input}
           value={personalEmail}
           onChangeText={setPersonalEmail}
