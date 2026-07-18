@@ -31,6 +31,9 @@ export default function RootLayout() {
 
         <Stack.Screen name="(team-member-tabs)" />
 
+        <Stack.Screen name="profile" />   // ✅ Add this
+
+
         {/* ================= ADMIN MODULES ================= */}
 
         <Stack.Screen name="module-selection" />
