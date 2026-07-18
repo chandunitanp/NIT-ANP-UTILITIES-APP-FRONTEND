@@ -144,8 +144,18 @@ export default function Profile() {
 
         </View>
 
-        {/* ================= LOGOUT ================= */}
+        {/* ================= EDIT PROFILE ================= */}
 
+<TouchableOpacity
+  style={styles.editButton}
+  onPress={() => router.push("/profile/edit")}
+>
+  <Text style={styles.editText}>
+    Edit Profile
+  </Text>
+</TouchableOpacity>
+
+        {/* ================= LOGOUT ================= */}
         <TouchableOpacity
           style={styles.logoutButton}
           onPress={handleLogout}
@@ -274,5 +284,20 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "bold",
   },
+
+  editButton: {
+  marginTop: 30,
+  backgroundColor: "#1976D2",
+  paddingVertical: 16,
+  borderRadius: 14,
+  alignItems: "center",
+  elevation: 3,
+},
+
+editText: {
+  color: "#fff",
+  fontSize: 17,
+  fontWeight: "bold",
+},
 
 });
