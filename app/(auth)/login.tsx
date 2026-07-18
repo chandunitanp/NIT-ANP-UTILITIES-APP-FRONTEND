@@ -17,6 +17,7 @@ import {
 } from "react-native";
 
 import { useRouter } from "expo-router";
+import { useEffect } from "react";
 
 import {
   useFocusEffect,
@@ -45,7 +46,6 @@ export default function Login() {
   const [loading, setLoading] =
     useState(false);
 
-  // =========================================================
   // AUTH
   // =========================================================
 
@@ -66,6 +66,7 @@ export default function Login() {
 
     }, [])
   );
+
 
   // =========================================================
   // LOGIN FUNCTION
@@ -255,18 +256,18 @@ export default function Login() {
 
         ) : (
 
-          <TouchableOpacity
-            style={styles.loginButton}
-            onPress={handleLogin}
-          >
+         <>
+  <TouchableOpacity
+    style={styles.loginButton}
+    onPress={handleLogin}
+  >
+    <Text style={styles.loginButtonText}>
+      Login
+    </Text>
+  </TouchableOpacity>
 
-            <Text style={styles.loginButtonText}>
-              Login
-            </Text>
-
-          </TouchableOpacity>
+</>
         )}
-
         {/* ================================================= */}
         {/* FORGOT PASSWORD */}
         {/* ================================================= */}
@@ -444,5 +445,8 @@ const styles = StyleSheet.create({
 
     fontSize: 17,
   },
+
+
+
 
 });
